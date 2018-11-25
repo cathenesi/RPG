@@ -1,0 +1,7 @@
+name: Test Map 2
+
+place: br.cathenesi.rpg.domain.model.place.Cave
+	item: br.cathenesi.rpg.domain.model.element.weapon.Sword
+
+place: br.cathenesi.rpg.domain.model.place.Cave
+	item: br.cathenesi.rpg.domain.model.element.character.game.Dragon

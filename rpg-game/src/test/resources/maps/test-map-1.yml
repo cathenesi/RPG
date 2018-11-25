@@ -1,0 +1,11 @@
+name: Test Map 1
+
+place: br.cathenesi.rpg.domain.model.place.House
+	item: br.cathenesi.rpg.domain.model.element.food.Bread
+	item: br.cathenesi.rpg.domain.model.element.weapon.Hammer
+
+place: br.cathenesi.rpg.domain.model.place.Cave
+	item: br.cathenesi.rpg.domain.model.element.weapon.Sword
+
+place: br.cathenesi.rpg.domain.model.place.Cave
+	item: br.cathenesi.rpg.domain.model.element.character.game.Dragon

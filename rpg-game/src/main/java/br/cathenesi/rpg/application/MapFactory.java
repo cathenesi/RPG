@@ -32,7 +32,7 @@ public class MapFactory {
 		}
 	}
 
-	public List<GameMap> build() throws Exception {
+	public List<GameMap> createMaps() throws Exception {
 
 		List<GameMap> maps = new ArrayList<>();
 

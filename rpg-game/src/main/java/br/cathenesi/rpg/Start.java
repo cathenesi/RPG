@@ -5,7 +5,7 @@ import br.cathenesi.rpg.application.MapFactory;
 public class Start {
 
 	public static void main(String[] args) throws Exception {
-		new MapFactory().build();
+		new MapFactory().createMaps();
 		System.out.println("OK!");
 	}
 	
