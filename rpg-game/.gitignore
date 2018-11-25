@@ -1,1 +1,5 @@
+/.settings
+.classpash
+.project
 /target/
+game.dat
