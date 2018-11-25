@@ -6,6 +6,4 @@ import br.cathenesi.rpg.domain.model.element.StrengthHolder;
 
 public interface GameCharacter extends Item, StrengthHolder, ActionHolder {
 
-	public String getImage();
-
 }

@@ -7,7 +7,7 @@ import br.cathenesi.rpg.domain.model.Explorable;
 import br.cathenesi.rpg.domain.model.place.Place;
 import br.cathenesi.rpg.view.render.Renderable;
 
-public class Map implements Explorable, Serializable {
+public class GameMap implements Explorable, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -15,10 +15,10 @@ public class Map implements Explorable, Serializable {
 	private Place lastPoint;
 	private List<Place> places;
 
-	public Map(String name, List<Place> places) {
+	public GameMap(String name, List<Place> places) {
 
 		this.name = name;
-		this.lastPoint = places.get(0);
+		this.lastPoint = places.size() > 0 ? places.get(0) : null;
 		this.places = places;
 	}
 

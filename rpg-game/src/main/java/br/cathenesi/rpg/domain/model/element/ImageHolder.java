@@ -1,4 +1,4 @@
-package br.cathenesi.rpg.domain.model;
+package br.cathenesi.rpg.domain.model.element;
 
 public interface ImageHolder {
 

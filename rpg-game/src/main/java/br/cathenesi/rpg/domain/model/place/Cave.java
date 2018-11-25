@@ -3,7 +3,7 @@ package br.cathenesi.rpg.domain.model.place;
 import java.io.Serializable;
 import java.util.List;
 
-import br.cathenesi.rpg.domain.model.ImageHolder;
+import br.cathenesi.rpg.domain.model.element.ImageHolder;
 import br.cathenesi.rpg.domain.model.element.Item;
 import br.cathenesi.rpg.view.render.Renderable;
 

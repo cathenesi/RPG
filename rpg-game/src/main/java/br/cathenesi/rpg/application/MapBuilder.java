@@ -1,33 +1,66 @@
 package br.cathenesi.rpg.application;
 
-import java.io.File;
-import java.io.FileFilter;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
 import java.util.List;
 
-import br.cathenesi.rpg.domain.model.map.Map;
+import br.cathenesi.rpg.domain.model.element.Item;
+import br.cathenesi.rpg.domain.model.map.GameMap;
+import br.cathenesi.rpg.domain.model.place.Place;
 
 public class MapBuilder {
 
-	public List<Map> build() throws Exception {
+	String mapName;
+	String currentPlaceClassName;
+	List<Item> currentItens = new ArrayList<>();
+	
+	List<Place> mapPlaces = new ArrayList<>();
 
-		try {
-			File root = new File(MapBuilder.class.getResource("/maps").toURI());
-			File[] files = root.listFiles(new FileFilter() {
+	public MapBuilder(List<MapFactory.MapElement> mapElements) throws Exception {
 
-				public boolean accept(File pathname) {
-					return pathname.getName().endsWith(".yml");
-				}
-			});
+		for (MapFactory.MapElement mapElement : mapElements) {
 
-			for (File file : files) {
-				System.out.println(file.getName());
+			switch (mapElement.getKey()) {
+			case "name": {
+				this.mapName = mapElement.getValue();
+				break;
 			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
+			case "place": {
+				this.handlePlace(mapElement.getValue());
+				break;
+			}
+			case "item": {
+				this.handleItem(mapElement.getValue());
+				break;
+			}
+			default:
+				break;
+			}
 		}
-		
-		return null;
-
+		this.handleLastPlace();
 	}
+
+	private void handlePlace(String placeClassName) throws Exception {
+
+		if (this.currentPlaceClassName != null) {
+			Constructor constructor = Class.forName(this.currentPlaceClassName).getConstructor(List.class);
+			Place place = (Place) constructor.newInstance(this.currentItens);
+			this.mapPlaces.add(place);
+			this.currentItens.clear();
+		}
+		this.currentPlaceClassName = placeClassName;
+	}
+	
+	private void handleLastPlace() throws Exception {
+		this.handlePlace(null);
+	}
+
+	private void handleItem(String itemClassName) throws Exception {
+		this.currentItens.add((Item) Class.forName(itemClassName).newInstance());
+	}
+
+	public GameMap build() {
+		return new GameMap(this.mapName, this.mapPlaces);
+	}
+
 }
