@@ -2,7 +2,7 @@ package br.cathenesi.rpg.domain.model.character;
 
 import org.junit.Test;
 
-import br.cathenesi.rpg.domain.model.element.character.user.Level;
+import br.cathenesi.rpg.domain.model.gameitem.player.Level;
 
 import org.junit.Assert;
 

@@ -4,16 +4,16 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.cathenesi.rpg.domain.model.element.Item;
-import br.cathenesi.rpg.domain.model.map.GameMap;
-import br.cathenesi.rpg.domain.model.place.Place;
+import br.cathenesi.rpg.domain.model.gameitem.Item;
+import br.cathenesi.rpg.domain.model.gamemap.GameMap;
+import br.cathenesi.rpg.domain.model.gamemap.place.Place;
 
 public class MapBuilder {
 
 	String mapName;
 	String currentPlaceClassName;
 	List<Item> currentItens = new ArrayList<>();
-	
+
 	List<Place> mapPlaces = new ArrayList<>();
 
 	public MapBuilder(List<MapFactory.MapElement> mapElements) throws Exception {
@@ -50,7 +50,7 @@ public class MapBuilder {
 		}
 		this.currentPlaceClassName = placeClassName;
 	}
-	
+
 	private void handleLastPlace() throws Exception {
 		this.handlePlace(null);
 	}
@@ -60,7 +60,7 @@ public class MapBuilder {
 	}
 
 	public GameMap build() {
-		return new GameMap(this.mapName, this.mapPlaces);
+		return new GameMap(this.mapName, new ArrayList<>(this.mapPlaces));
 	}
 
 }

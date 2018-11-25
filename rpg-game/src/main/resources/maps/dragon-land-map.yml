@@ -1,17 +1,17 @@
 name: Dragon Land
 
-place: br.cathenesi.rpg.domain.model.place.Cave
-	item: br.cathenesi.rpg.domain.model.element.food.Bread
+place: br.cathenesi.rpg.domain.model.gamemap.place.Cave
+	item: br.cathenesi.rpg.domain.model.gameitem.food.Bread
 
-place: br.cathenesi.rpg.domain.model.place.Cave
-	item: br.cathenesi.rpg.domain.model.element.character.game.Ogre
+place: br.cathenesi.rpg.domain.model.gamemap.place.Cave
+	item: br.cathenesi.rpg.domain.model.gameitem.character.Ogre
 
-place: br.cathenesi.rpg.domain.model.place.House
-	item: br.cathenesi.rpg.domain.model.element.food.Bread
-	item: br.cathenesi.rpg.domain.model.element.weapon.Hammer
+place: br.cathenesi.rpg.domain.model.gamemap.place.House
+	item: br.cathenesi.rpg.domain.model.gameitem.food.Bread
+	item: br.cathenesi.rpg.domain.model.gameitem.weapon.Hammer
 
-place: br.cathenesi.rpg.domain.model.place.Cave
-	item: br.cathenesi.rpg.domain.model.element.weapon.Sword
+place: br.cathenesi.rpg.domain.model.gamemap.place.Cave
+	item: br.cathenesi.rpg.domain.model.gameitem.weapon.Sword
 
-place: br.cathenesi.rpg.domain.model.place.Cave
-	item: br.cathenesi.rpg.domain.model.element.character.game.Dragon
+place: br.cathenesi.rpg.domain.model.gamemap.place.Cave
+	item: br.cathenesi.rpg.domain.model.gameitem.character.Dragon

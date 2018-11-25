@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import br.cathenesi.rpg.domain.model.map.GameMap;
+import br.cathenesi.rpg.domain.model.gamemap.GameMap;
 
 public class MapFactory {
 
@@ -47,8 +47,6 @@ public class MapFactory {
 		List<MapElement> mapElements = new ArrayList<>();
 
 		for (File file : files) {
-
-			System.out.println(">> Creating map " + file.getName());
 
 			Files.lines(Paths.get(file.getAbsolutePath()), StandardCharsets.UTF_8).forEach(s -> {
 				StringTokenizer st = new StringTokenizer(s, ":");
