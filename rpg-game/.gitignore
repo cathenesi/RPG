@@ -1,5 +1,6 @@
 /.settings
-.classpash
+.classpath
 .project
 /target/
+/bin/
 game.dat
