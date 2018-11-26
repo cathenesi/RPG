@@ -19,17 +19,17 @@ public class DiskGamePersistenceService implements GamePersistenceService {
 	@Override
 	public void save(Game game) throws Exception {
 
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(PATH)))) {
-			oos.writeObject(game);
+		try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(new File(PATH)))) {
+			stream.writeObject(game);
 		}
 	}
 
 	@Override
 	public Game load() throws Exception {
 
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(PATH)))) {
-			Game game = (Game) ois.readObject();
-			game.setMaps(mapFactory.createMaps());
+		try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(new File(PATH)))) {
+			Game game = (Game) stream.readObject();
+			game.setMaps(this.mapFactory.createMaps());
 			return game;
 		}
 	}

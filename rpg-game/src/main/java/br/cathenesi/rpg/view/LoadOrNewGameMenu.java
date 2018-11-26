@@ -64,7 +64,7 @@ public class LoadOrNewGameMenu extends BasicMenu {
 		return game;
 	}
 
-	public Game loadGame() throws Exception {
+	private Game loadGame() throws Exception {
 
 		Game result = null;
 		try {
