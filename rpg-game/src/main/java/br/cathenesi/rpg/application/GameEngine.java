@@ -1,4 +1,4 @@
-package br.cathenesi.rpg;
+package br.cathenesi.rpg.application;
 
 import br.cathenesi.rpg.domain.model.Game;
 import br.cathenesi.rpg.domain.model.action.ActionResult;
