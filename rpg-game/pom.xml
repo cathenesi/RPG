@@ -19,12 +19,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>1.10.19</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
 	<build>
@@ -40,6 +34,32 @@
 					</archive>
 				</configuration>
 			</plugin>
+		
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+				<configuration>
+                    <check></check>
+                    <instrumentation>
+                        <excludes>
+                            <exclude>br/cathenesi/rpg/*.class</exclude>
+                            <exclude>br/cathenesi/rpg/application/**/*.class</exclude>
+                            <exclude>br/cathenesi/rpg/view/**/*.class</exclude>
+                            <exclude>br/cathenesi/rpg/infrastructure/*.class</exclude>
+                            <exclude>br/cathenesi/rpg/infrastructure/impl/*.class</exclude>
+                        </excludes>
+                    </instrumentation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>instrument</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            	       	
 		</plugins>
 	</build>
 	    
